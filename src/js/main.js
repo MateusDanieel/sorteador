@@ -4,9 +4,12 @@ let btAdc = document.getElementById('btAdc');
 let tblNames = document.getElementById('tblNames');
 let btSort = document.getElementById('btSort');
 let form = document.getElementById('form');
-let result = document.querySelector('#result h1');
+let result = document.querySelector('#result');
+let titleResult = document.querySelector('#result h1');
 let btExcluir;
 let alert = document.querySelector('.alert');
+let btReturn = document.getElementById('btReturn');
+let btLimpar = document.getElementById('btLimpar');
 
 btAdc.addEventListener('click', () => {
     tblNames.innerHTML = '';
@@ -49,7 +52,8 @@ btSort.addEventListener('click', () => {
         let i = Math.floor(Math.random() * names.length);
 
         form.style.display = 'none';
-        result.innerHTML = names[i];
+        titleResult.innerHTML = names[i];
+        result.style.display = 'block';
         alert.style.display = 'none';
     } else {
         alert.style.display = 'block';
@@ -57,6 +61,19 @@ btSort.addEventListener('click', () => {
     
 });
 
+btReturn.addEventListener('click', () => {
+    result.style.display = 'none';
+    form.style.display = 'flex';
+});
+
+btLimpar.addEventListener('click', () => {
+    var r = confirm('Todos os dados salvos serão perdidos.\nDeseja continuar?');
+    if (r == true){
+      window.location.reload();
+    }
+});
+
 function delArrEl(i) {
     names.splice(i);
 }
+

@@ -24,15 +24,17 @@
 
         <div class="container">
 
-            <h1 class="title">
-                Sorteador
-            </h1>
-
-            <p class="intro">
-                Insira um nome (ou número) por vez que deseja sortear e clique em "ADICIONAR". Após inserir todos os valores desejados, clique em "SORTEAR" para realizar o sorteio.
-            </p>
+            
 
             <div id="form">
+                <h1 class="title">
+                    Sorteador
+                </h1>
+    
+                <p class="intro">
+                    Insira um nome (ou número) por vez que deseja sortear e clique em "ADICIONAR". Após inserir todos os valores desejados, clique em "SORTEAR" para realizar o sorteio.
+                </p>
+                
                 <input type="text" id="inputName" name="" placeholder="Insira um nome ou número ..." maxlength="30" autofocus />
 
                 <div class="btn-group">
@@ -54,6 +56,16 @@
 
             <div id="result">
                 <h1></h1>
+
+                <div class="btn-group">
+                    <button type="button" id="btReturn">
+                        <i class="fa-solid fa-arrow-rotate-left"></i> Voltar
+                    </button>
+    
+                    <a href="#" class="bt-link" id="btLimpar">
+                        <i class="fa-solid fa-broom"></i> Limpar 
+                    </a>
+                </div>
             </div>
 
             

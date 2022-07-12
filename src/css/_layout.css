@@ -34,6 +34,7 @@
             max-width: 400px;
 
             &::placeholder {
+                color: rgba(#FFF, .3);
                 font-style: italic;
             }
         }
@@ -68,10 +69,10 @@
                 }
 
                 &#btAdc {
-                    background-color: #2ecc71;
+                    background-color: #16a085;
 
                     &:hover {
-                        background-color: rgba(#2ecc71, .9);
+                        background-color: rgba(#16a085, .9);
                     }
                 }
 
@@ -122,7 +123,64 @@
             }
         }
     }
+
+    #result {
+        display: none;
+
+        h1 {
+            font-size: 56px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 900;
+        } 
+
+        .btn-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            button, a {
+                outline: none;
+                padding: 12.5px 35px;
+                font-size: 18px;
+                border: 0;
+                border-radius: 15px;
+                text-transform: uppercase;
+                cursor: pointer;
+                margin: 0 10px;
+                display: block;
+                text-decoration: none;
+
+                @media (--sm) {
+                    margin: 0 0 10px;
+                }
+
+                i {
+                    margin-right: 5px;
+                }
+
+                &#btReturn {
+                    background-color: #3498db;
+
+                    &:hover {
+                        background-color: rgba(#3498db, .9);
+                    }
+                }
+
+                &.bt-link {
+                    background-color: #16a085;
+
+                    &:hover {
+                        background-color: rgba(#16a085, .9);
+                    }
+                }
+            }
+        }
+    }
 }
+
+
 
 .sec-footer {
     p {
@@ -135,7 +193,7 @@
 
         a {
             text-decoration: none;
-            color: #da0942;
+            color: #e74c3c;
             font-weight: 600;
         }
     }
