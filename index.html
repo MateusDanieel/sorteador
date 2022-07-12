@@ -24,20 +24,32 @@
 
         <div class="container">
 
+            <h1 class="title">
+                Sorteador
+            </h1>
+
+            <p class="intro">
+                Insira um nome (ou número) por vez que deseja sortear e clique em "ADICIONAR". Após inserir todos os valores desejados, clique em "SORTEAR" para realizar o sorteio.
+            </p>
+
             <div id="form">
-                <input type="text" id="inputName" name="" placeholder="Insira um nome ..." maxlength="30" />
+                <input type="text" id="inputName" name="" placeholder="Insira um nome ou número ..." maxlength="30" autofocus />
 
-                <button type="button" id="btAdc">
-                    Adicionar
-                </button>
+                <div class="btn-group">
+                    <button type="button" id="btAdc">
+                        <i class="fa-solid fa-user-plus"></i> Adicionar
+                    </button>
+    
+                    <button type="button" id="btSort">
+                        <i class="fa-solid fa-dice"></i> Sortear
+                    </button>
+                </div>
 
-                <button type="button" id="btSort">
-                    Sortear
-                </button>
+                <div class="alert">
+                    <b>ERRO!</b> Insira pelo menos 2 valores para realizar o sorteio.
+                </div>
 
-                <table id="tblNames">
-                    
-                </table>
+                <table id="tblNames"></table>
             </div>
 
             <div id="result">
@@ -51,24 +63,19 @@
         </div>
 
     </main>
+
+    <footer class="sec-footer">
+        <div class="container">
+            <p>&copy; 2022 - Developed by <a href="https://mateusdanieel.github.io/" target="_blank">Mateus Daniel</a></p>
+        </div>
+    </footer>
     
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="https://kit.fontawesome.com/427063e222.js" crossorigin="anonymous"></script>
     <script src="dist/js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="dist/js/plugins.min.js"></script>
     <script src="dist/js/main.min.js"></script>
-
+    
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
