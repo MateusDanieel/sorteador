@@ -52,9 +52,10 @@ btSort.addEventListener('click', () => {
         let i = Math.floor(Math.random() * names.length);
 
         form.style.display = 'none';
-        titleResult.innerHTML = names[i];
         result.style.display = 'block';
         alert.style.display = 'none';
+        titleResult.innerHTML = names[i];
+   
     } else {
         alert.style.display = 'block';
     }
