@@ -19,27 +19,38 @@ btAdc.addEventListener('click', () => {
     }
 
     names.forEach((el, i) => {
-        tblNames.innerHTML += 
-        `<tr>
-            <td>${el}</td>
-            <td>
-                <button type="button" class="btExcluir" data-id="${i}" title="Excluir">
-                <i class="fa-solid fa-trash"></i> 
-                </button>
-            </td>
-         </tr>`;
+        if (el != '') {
+            tblNames.innerHTML += 
+            `<tr data-id="${i}">
+                <td>${el}</td>
+                <td>
+                    <button type="button" class="btExcluir" data-id="${i}" title="Excluir">
+                    <i class="fa-solid fa-trash"></i> 
+                    </button>
+                </td>
+            </tr>`;
+        }
     });
 
     btExcluir = document.querySelectorAll('.btExcluir');
 
     btExcluir.forEach((el, i) => {
         el.addEventListener('click', () => {
+            console.log(el.dataset.id, i);
+
             let tr = document.querySelectorAll('#tblNames tr');
 
-            delArrEl(el.dataset.id);
+            names.splice(el.dataset.id, 1);
 
-            tr[i].remove();
-            
+            console.log(names, tr[el.dataset.id]);
+
+            tr.forEach((trEl) => {
+                if(trEl.dataset.id == el.dataset.id) {
+                    trEl.remove();
+                }
+            });
+
+            btAdc.click();
         });
     });
 
@@ -73,8 +84,3 @@ btLimpar.addEventListener('click', () => {
       window.location.reload();
     }
 });
-
-function delArrEl(i) {
-    names.splice(i);
-}
-
