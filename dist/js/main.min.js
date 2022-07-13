@@ -34,11 +34,16 @@ btAdc.addEventListener('click', () => {
 
     btExcluir.forEach((el, i) => {
         el.addEventListener('click', () => {
+            console.log(el.dataset.id, i);
+
             let tr = document.querySelectorAll('#tblNames tr');
 
-            delArrEl(el.dataset.id);
+           // delArrEl(el.dataset.id);
+           names.splice(el.dataset.id);
 
-            tr[i].remove();
+            tr[el.dataset.id].remove();
+
+
             
         });
     });
@@ -73,8 +78,3 @@ btLimpar.addEventListener('click', () => {
       window.location.reload();
     }
 });
-
-function delArrEl(i) {
-    names.splice(i);
-}
-
