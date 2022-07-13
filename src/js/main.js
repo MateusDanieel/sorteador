@@ -19,15 +19,17 @@ btAdc.addEventListener('click', () => {
     }
 
     names.forEach((el, i) => {
-        tblNames.innerHTML += 
-        `<tr>
-            <td>${el}</td>
-            <td>
-                <button type="button" class="btExcluir" data-id="${i}" title="Excluir">
-                <i class="fa-solid fa-trash"></i> 
-                </button>
-            </td>
-         </tr>`;
+        if (el != '') {
+            tblNames.innerHTML += 
+            `<tr data-id="${i}">
+                <td>${el}</td>
+                <td>
+                    <button type="button" class="btExcluir" data-id="${i}" title="Excluir">
+                    <i class="fa-solid fa-trash"></i> 
+                    </button>
+                </td>
+            </tr>`;
+        }
     });
 
     btExcluir = document.querySelectorAll('.btExcluir');
@@ -38,13 +40,17 @@ btAdc.addEventListener('click', () => {
 
             let tr = document.querySelectorAll('#tblNames tr');
 
-           // delArrEl(el.dataset.id);
-           names.splice(el.dataset.id);
+            names.splice(el.dataset.id, 1);
 
-            tr[el.dataset.id].remove();
+            console.log(names, tr[el.dataset.id]);
 
+            tr.forEach((trEl) => {
+                if(trEl.dataset.id == el.dataset.id) {
+                    trEl.remove();
+                }
+            });
 
-            
+            btAdc.click();
         });
     });
 
